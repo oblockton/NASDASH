@@ -40,7 +40,7 @@ def init_ticktable(tablename):
 # if __name__ == '__main__':
     # Call function/ Create database
 
-#init_ticktable('tickers')
+# init_ticktable('tickers')
 # Unconment^^^^  load databse with tickerlist by running file in terminal
 # If no db exist it will create one in db folder
 
