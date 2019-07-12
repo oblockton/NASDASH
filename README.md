@@ -33,6 +33,6 @@ There is also the possibility of including visualizations of other relevant data
 
 ## Design Mockup
 
-![Images/Home.jpg](images/Home.jpg)
+![images/Home.jpg](images/Home.jpg)
 
-![Images/Page.jpg](images/Page.jpg)
+![images/Page.jpg](images/Page.jpg)
