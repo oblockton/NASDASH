@@ -9,6 +9,38 @@
   padding-left: 1%;
 } */
 
+#brandimage {
+  margin-left: 100px;
+}
+
+#market-tables {
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#news-events {
+  margin:1%
+}
+.year-select  {
+  margin: 1%;
+}
+
+#plot-container {
+  padding: 20px;
+  display: block;
+  background-color: white;
+}
+
+#symbolrow {
+  display: contents;
+}
+
+#wrapper {
+  margin-left: 95px;
+  width: 90%;
+}
+
 .plotarea {
   background-color:lavendar;
 }

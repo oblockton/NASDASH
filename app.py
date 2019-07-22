@@ -27,6 +27,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     """Return the homepage."""
+
     return render_template("index.html")
 
 @app.route("/aboutus")
@@ -71,8 +72,10 @@ def show_tables(tableinput):
 
 @app.route('/econcal/<dateinput>')
 def economic_calendar(dateinput):
-
-    return scrape_econcal(dateinput)
+    try:
+        return scrape_econcal(dateinput)
+    except:
+        return jsonify("No records for this date")
 
 # *******************************************************************
 # Pull historical stock data from Alpha Vantage by TIME_SERIES_MONTHLY
