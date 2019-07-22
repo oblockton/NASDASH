@@ -284,7 +284,7 @@ $(document).ready(function() {
 function buildEconCal(dateinput) {
   let url =  `/econcal/${dateinput}`
   d3.json(url).then((response) => {
-    // console.log(response);
+    console.log(response);
     if (response != 'No records for this date'){
       let table = document.getElementById('market-tables');
       table.innerHTML = ''; // clear previos table
@@ -311,11 +311,10 @@ function buildEconCal(dateinput) {
           cell.innerText = datarow[key];
         }; // End for j
       };// End for i
-    } else {
+    } else if (response == 'No records for this date') {
       let table = document.getElementById('market-tables');
       table.innerHTML = `<p>${response[0]}</p>`;
     }; // End if no records
-
   });// End D3.json
 };// End buildEconCal
 
@@ -335,7 +334,6 @@ function buildMarketStats(input) {
     }; // End for(i < columns.length)
     /////////////////////////////////////////////////////// Build Table body
     let tablebody = table.createTBody();
-    // tablebody.innerHTML = ''
     for (let i=0; i < response.length; i++) { // Iterate through article
       let datarow = response[i];
       // console.log(datarow);
@@ -356,34 +354,6 @@ function buildMarketStats(input) {
     };// End for i
   });// End D3.json
 }; // End function buildEcon
-
-
-// function buildMarketStats(input) {
-//   let url = `/marketstats/${input}`
-//   d3.json(url).then((response)=> {
-//     // console.log(response);
-//     let table = document.querySelector('#marketwatch');
-//     table.innerHTML = ''
-//     for (let i=0; i < response.length; i++) { // Iterate through article
-//       let datarow = response[i];
-//       // console.log(datarow);
-//       let keys = Object.keys(datarow)
-//       // console.log(keys);
-//       let row = table.insertRow(i)
-//       for (let j = 0; j < keys.length;j++) { // Iterate through article keys
-//         let key = keys[j];
-//         let cell = row.insertCell(j);
-//         if ( key == 'Symbol') {
-//           // cell.innerHTML =  `<a rel="noopener noreferrer" href=${article[key]} target="_blank">Read Article</a>`;
-//           cell.innerHTML = `<input type="radio" id="markettick" name="marketsymbol" value=${datarow[key]}><label for=${datarow[key]}>${datarow[key]}</label>`;
-//         } else if (true){
-//               cell.innerText = datarow[key];
-//         };//end if
-//       }; // End for j
-//     };// End for i
-//   });// End D3.json
-// }; // End function buildEcon
-
 
 
 ///////////////////////////////////////////////////////
