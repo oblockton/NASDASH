@@ -16,7 +16,7 @@ import requests
 
 
 app = Flask(__name__)
-app.config['NEWS_KEY'] = os.environ.get('NEWS_KEY','')
+NEWS_KEY = os.environ.get('NEWS_KEY','')
 
 
 
