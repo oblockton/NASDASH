@@ -1,4 +1,4 @@
-## Heroku Link: https://dudley-backbacon-95036.herokuapp.com/
+## Heroku Link: https://nasdash.herokuapp.com/
 
 # Stock Market Analysis Dashboard
 
@@ -27,7 +27,7 @@ There is also the possibility of including visualizations of other relevant data
 ## Datasets
 
 * [Alpha Vantage](https://www.alphavantage.co/documentation/) for historcal price data.
-* ForexFaactory.com for [economic calendar](https://www.forexfactory.com/calendar.php?day=/)
+* ForexFactory.com for [economic calendar](https://www.forexfactory.com/calendar.php?day=/)
 * Newsriver.io API for [Market News](https://www.newsriver.io/) data.
 * Table scrapes of [Nasdaq.com](https://www.nasdaq.com/markets/most-active.aspx/) market  overview tables.
 
