@@ -16,6 +16,8 @@ import requests
 
 
 app = Flask(__name__)
+app.config['NEWS_KEY'] = os.environ.get('NEWS_KEY','')
+
 
 
 #################################################
@@ -54,7 +56,7 @@ def news_table(symbol):
     print(symbol)
     # NEWS_KEY= 'sBBqsGXiYgF0Db5OV5tAw5iAqWu55neES5TvZHignTCBsmxsyYcxg7L1XqKkxDKon2pHZrSf1gT2PUujH1YaQA'
     #news_key 2 "sBBqsGXiYgF0Db5OV5tAw6SAtFG7TDb-b4qTEp89VCPPqrzCVs-KqSua6jkDSPsFn2pHZrSf1gT2PUujH1YaQA"
-    NEWS_KEY = 'sBBqsGXiYgF0Db5OV5tAw2LWTPyOF64Ql52zi8L0fF7datJslSgn1Uc0Pk2wINBqn2pHZrSf1gT2PUujH1YaQA'
+    #NEWS_KEY = 'sBBqsGXiYgF0Db5OV5tAw2LWTPyOF64Ql52zi8L0fF7datJslSgn1Uc0Pk2wINBqn2pHZrSf1gT2PUujH1YaQA'
     articles = get_articles(symbol,NEWS_KEY)
     # init_newstable(articles)
 
