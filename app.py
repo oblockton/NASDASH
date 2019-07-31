@@ -17,6 +17,8 @@ import requests
 
 app = Flask(__name__)
 NEWS_KEY = os.environ.get('NEWS_KEY','')
+alpha_vantage_key = os.environ.get('ALPHA_VANTAGE', '')
+
 
 
 
@@ -54,9 +56,7 @@ def tickermenu():
 def news_table(symbol):
     """ Returns parsed news data from an API call.loaded to db, then used to build news table"""
     print(symbol)
-    # NEWS_KEY= 'sBBqsGXiYgF0Db5OV5tAw5iAqWu55neES5TvZHignTCBsmxsyYcxg7L1XqKkxDKon2pHZrSf1gT2PUujH1YaQA'
-    #news_key 2 "sBBqsGXiYgF0Db5OV5tAw6SAtFG7TDb-b4qTEp89VCPPqrzCVs-KqSua6jkDSPsFn2pHZrSf1gT2PUujH1YaQA"
-    #NEWS_KEY = 'sBBqsGXiYgF0Db5OV5tAw2LWTPyOF64Ql52zi8L0fF7datJslSgn1Uc0Pk2wINBqn2pHZrSf1gT2PUujH1YaQA'
+
     articles = get_articles(symbol,NEWS_KEY)
     # init_newstable(articles)
 
@@ -86,7 +86,7 @@ def economic_calendar(dateinput):
 
 @app.route("/stockpull/<symbol>")
 def stockpull(symbol):
-    alpha_vantage_key = "W77W04CH6O88X9CC"
+    alpha_vantage_key =
     return jsonify(stock_call(symbol,alpha_vantage_key))
 
 
@@ -96,7 +96,7 @@ def stockpull(symbol):
 #********************************************************************
 @app.route("/stockhistory/<symbol>")
 def stockhistory(symbol):
-    url = 'https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=' + symbol + '&apikey=W77W04CH6O88X9CC'
+    url = 'https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=' + symbol + f'&apikey={alpha_vantage_key}'
     stockhistory = requests.get(url).json()
     return jsonify(stockhistory)
 
