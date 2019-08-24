@@ -86,7 +86,6 @@ def economic_calendar(dateinput):
 
 @app.route("/stockpull/<symbol>")
 def stockpull(symbol):
-    alpha_vantage_key =
     return jsonify(stock_call(symbol,alpha_vantage_key))
 
 
